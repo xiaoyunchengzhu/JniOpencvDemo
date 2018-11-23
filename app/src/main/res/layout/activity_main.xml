@@ -8,21 +8,28 @@
     tools:context=".MainActivity">
 
     <Button
-        android:text="开始蜕化"
-        android:id="@+id/btn_start"
+        android:text="蜕化"
+        android:id="@+id/btn_sharpen"
         android:onClick="click"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <ImageView
-        android:id="@+id/img"
+    <Button
+        android:text="求和"
+        android:id="@+id/btn_plus"
+        android:onClick="click"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/img1" />
-    <ImageView
-        android:id="@+id/img2"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="亮度和对比度"
+        android:id="@+id/btn_lightness"
+        android:onClick="click"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/img1"
-        />
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="平滑处理"
+        android:id="@+id/btn_smoothing"
+        android:onClick="click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

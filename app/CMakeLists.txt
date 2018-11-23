@@ -17,7 +17,7 @@ add_library(
              base_opencv
              SHARED
              src/main/cpp/source/opencv_jni_util.cpp
-             src/main/cpp/source/filter.cpp
+             src/main/cpp/source/smoothing.cpp
              src/main/cpp/source/basefunction.cpp
               )
 include_directories(

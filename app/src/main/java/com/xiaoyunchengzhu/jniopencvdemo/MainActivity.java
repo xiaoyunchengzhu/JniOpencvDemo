@@ -1,5 +1,6 @@
 package com.xiaoyunchengzhu.jniopencvdemo;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -12,46 +13,48 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.xiaoyunchengzhu.jniopencvdemo.imgutil.ImgConvert;
+import com.xiaoyunchengzhu.jniopencvdemo.module.LightnessActivity;
+import com.xiaoyunchengzhu.jniopencvdemo.module.PlusActivity;
+import com.xiaoyunchengzhu.jniopencvdemo.module.SharpenActivity;
+import com.xiaoyunchengzhu.jniopencvdemo.module.SmoothingActivity;
 import com.xiaoyunchengzhu.jniopencvdemo.opencvutil.Basefunction;
 
 import java.io.ByteArrayOutputStream;
+import java.nio.ByteBuffer;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("base_opencv");
     }
-    ImageView img,img2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Basefunction.init(Environment.getExternalStorageDirectory()+"");
-        // Example of a call to a native method
-         img=findViewById(R.id.img);
-         img2=findViewById(R.id.img2);
-
     }
-    Bitmap out;
+
     public void click(View view){
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Drawable drawable = img.getDrawable();
-                BitmapDrawable drawable1= (BitmapDrawable) drawable;
-                Bitmap bitmap = drawable1.getBitmap();
-                Basefunction.sharpenBitmp(bitmap,null);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        img2.setImageBitmap(out);
-                    }
-                });
-
-            }
-        }).start();
+        Class cls=null;
+        switch (view.getId()){
+            case R.id.btn_sharpen:
+                cls= SharpenActivity.class;
+                break;
+            case R.id.btn_plus:
+                cls= PlusActivity.class;
+                break;
+            case R.id.btn_lightness:
+                cls= LightnessActivity.class;
+                break;
+            case R.id.btn_smoothing:
+                cls= SmoothingActivity.class;
+                break;
+        }
+        if (cls!=null){
+            startActivity(new Intent(this,cls));
+        }
     }
 
 }

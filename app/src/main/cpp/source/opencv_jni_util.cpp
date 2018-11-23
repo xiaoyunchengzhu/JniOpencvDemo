@@ -20,7 +20,6 @@ cv::Mat convertBitmp2Mat(JNIEnv *env,jobject obj,jobject bitmap) {
 
     }
     cv::Mat test(infocolor.height, infocolor.width, CV_8UC4, (char *) pixelscolor);//BGRA
-
     cv::Mat bgra;
 
     cv::Mat bgr;

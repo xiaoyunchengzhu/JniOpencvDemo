@@ -6,20 +6,16 @@ public class Basefunction {
 
 
     public static native void init(String path);
+
     /**
-     * 掩码操作,锐化
+     * 掩码操作，锐化
      * @param input
-     * @param output
      * @param width
      * @param height
+     * @return 锐化后的数据
      */
-    public static native void sharpen(byte[] input,byte[] output,int width,int height);
-    /**
-     * 掩码操作,锐化
-     * @param input
-     * @param output
-     */
-    public static native void sharpenBitmp(Bitmap input, Bitmap output);
+    public static native byte[] sharpen(byte[] input,int width,int height,int sharpen);
+
 
 
     /**
@@ -29,23 +25,23 @@ public class Basefunction {
      * @param width
      * @param height
      * @param alpha 比重 >0 and <1
-     * @param output 输出
+     * @return 求和后的数据
      */
-    public native void add(byte[] img1,
-                           byte[] img2,int width,int height,double alpha,
-                           byte[] output);
+    public static native byte[] add(byte[] img1,
+                           byte[] img2,int width,int height,double alpha
+                           );
 
 
     /**
      * 改变对比度和亮度
      * @param input
-     * @param output
      * @param width
      * @param height
-     * @param a 对比度 1 -3
+     * @param a 对比度 1.0 -3.0
      * @param b 亮度 0 -100
+     * @return 改变后的数据
      */
-    public native void  changeLighteness(byte[] input,byte[] output,int width,int height,double a,double b);
+    public static native byte[]  changeLighteness(byte[] input,int width,int height,double a,double b);
 
 
 }

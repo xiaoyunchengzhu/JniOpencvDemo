@@ -8,6 +8,7 @@
 #endif //JNIOPENCVDEMO_OPENCV_JNI_UTIL_H
 #include <opencv2/core/mat.hpp>
 #include <jni.h>
+#include "android/log.h"
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgproc.hpp"
 #include <opencv2/imgproc/types_c.h>
