@@ -16,7 +16,7 @@
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="平滑处理"
+        android:text="平滑处理\n处理区域：仅对左侧脸部中间处理"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <ImageView
@@ -24,7 +24,7 @@
         android:adjustViewBounds="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/img1" />
+        android:src="@mipmap/img4" />
     <LinearLayout
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
         android:id="@+id/img1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/img1"
+        android:src="@mipmap/img4"
         />
         <LinearLayout
             android:layout_marginTop="20dp"
@@ -67,7 +67,7 @@
             android:id="@+id/img2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@mipmap/img1"
+            android:src="@mipmap/img4"
             />
         <LinearLayout
             android:layout_marginTop="20dp"
@@ -89,7 +89,7 @@
             android:id="@+id/img3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@mipmap/img1"
+            android:src="@mipmap/img4"
             />
     </LinearLayout>
 </ScrollView>

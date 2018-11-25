@@ -8,16 +8,18 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_middleFilter(JNIEnv 
                                                                       jint width, jint height,
                                                                          jint alpha) {
     jbyte *input = env->GetByteArrayElements(input_, NULL);
-    cv::Mat image = cv::Mat(height,width,CV_8UC4,(unsigned char *)input);
+    cv::Mat inputimg = cv::Mat(height,width,CV_8UC4,(unsigned char *)input);
+    cv::Mat image=inputimg.clone();
     const int nChannels = image.channels();
-    cv::Mat dst;
-    medianBlur(image, dst, alpha);
+    cv::Mat dst=cv::Mat(image, cv::Rect(0, image.rows / 3, image.cols / 3, image.rows / 2));
+    medianBlur(dst, dst, alpha);
 
     int len=width*height*nChannels;
     jbyteArray output=env->NewByteArray(len);
-    env->SetByteArrayRegion(output,0,len,(signed char *)dst.data);
+    env->SetByteArrayRegion(output,0,len,(signed char *)image.data);
     // TODO
 
+    ~inputimg;
     ~image;
     ~dst;
     env->ReleaseByteArrayElements(input_, input, 0);
@@ -29,16 +31,17 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_blurFilter(JNIEnv *e
                                                                     jint height,
                                                                        jint alpha) {
     jbyte *input = env->GetByteArrayElements(input_, NULL);
-    cv::Mat image = cv::Mat(height,width,CV_8UC4,(unsigned char *)input);
+    cv::Mat inputimg = cv::Mat(height,width,CV_8UC4,(unsigned char *)input);
+    cv::Mat image=inputimg.clone();
     const int nChannels = image.channels();
-    cv::Mat dst;
-    blur(image, dst, cv::Size(alpha, alpha), cv::Point(-1, -1));
+    cv::Mat dst=cv::Mat(image, cv::Rect(0, image.rows / 3, image.cols / 3, image.rows / 2));
+    blur(dst, dst, cv::Size(alpha, alpha), cv::Point(-1, -1));
 
     int len=width*height*nChannels;
     jbyteArray output=env->NewByteArray(len);
-    env->SetByteArrayRegion(output,0,len,(signed char *)dst.data);
+    env->SetByteArrayRegion(output,0,len,(signed char *)image.data);
     // TODO
-
+    ~inputimg;
     ~image;
     ~dst;
     env->ReleaseByteArrayElements(input_, input, 0);
@@ -52,16 +55,18 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_gaussianFilter(JNIEn
                                                                         jint width, jint height,
                                                                            jint alpha) {
     jbyte *input = env->GetByteArrayElements(input_, NULL);
-    cv::Mat image = cv::Mat(height,width,CV_8UC4,(unsigned char *)input);
+    cv::Mat inputimg = cv::Mat(height,width,CV_8UC4,(unsigned char *)input);
+    cv::Mat image=inputimg.clone();
     const int nChannels = image.channels();
-    cv::Mat dst;
-    GaussianBlur(image, dst, cv::Size(alpha, alpha), 0, 0);
+    cv::Mat dst=cv::Mat(image, cv::Rect(0, image.rows / 3, image.cols / 3, image.rows / 2));
+    GaussianBlur(dst, dst, cv::Size(alpha, alpha), 0, 0);
 
     int len=width*height*nChannels;
     jbyteArray output=env->NewByteArray(len);
-    env->SetByteArrayRegion(output,0,len,(signed char *)dst.data);
+    env->SetByteArrayRegion(output,0,len,(signed char *)image.data);
     // TODO
 
+    ~inputimg;
     ~image;
     ~dst;
     env->ReleaseByteArrayElements(input_, input, 0);
@@ -75,16 +80,18 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_bilateralFilter(JNIE
                                                                          jint width, jint height,
                                                                             jint alpha) {
     jbyte *input = env->GetByteArrayElements(input_, NULL);
-    cv::Mat image = cv::Mat(height,width,CV_8UC4,(unsigned char *)input);
+    cv::Mat inputimg = cv::Mat(height,width,CV_8UC4,(unsigned char *)input);
+    cv::Mat image=inputimg.clone();
     const int nChannels = image.channels();
-    cv::Mat dst;
-    bilateralFilter(image, dst, alpha, alpha * 2, alpha / 2);
+    cv::Mat dst=cv::Mat(image, cv::Rect(0, image.rows / 3, image.cols / 3, image.rows / 2));
+    bilateralFilter(dst, dst, alpha, alpha * 2, alpha / 2);
 
     int len=width*height*nChannels;
     jbyteArray output=env->NewByteArray(len);
-    env->SetByteArrayRegion(output,0,len,(signed char *)dst.data);
+    env->SetByteArrayRegion(output,0,len,(signed char *)image.data);
     // TODO
 
+    ~inputimg;
     ~image;
     ~dst;
     env->ReleaseByteArrayElements(input_, input, 0);

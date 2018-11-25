@@ -13,7 +13,7 @@ import com.xiaoyunchengzhu.jniopencvdemo.opencvutil.Basefunction;
 import com.xiaoyunchengzhu.jniopencvdemo.opencvutil.Smoothing;
 
 /**
- * 滤波 ，平滑处理
+ * 滤波 ，平滑处理,仅对左侧脸部局部区域滤波，如果想改区域，则可直接进入源码修改选择区域，或者为native 方法增加区域参数。
  */
 public class SmoothingActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener{
 
@@ -34,7 +34,7 @@ public class SmoothingActivity extends AppCompatActivity implements SeekBar.OnSe
         seekBar1.setOnSeekBarChangeListener(this);
         seekBar2.setOnSeekBarChangeListener(this);
         seekBar3.setOnSeekBarChangeListener(this);
-        Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.mipmap.img1);
+        Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.mipmap.img4);
         width = bitmap1.getWidth();
         height = bitmap1.getHeight();
         input = ImgConvert.getBytesByBitmap(bitmap1);
