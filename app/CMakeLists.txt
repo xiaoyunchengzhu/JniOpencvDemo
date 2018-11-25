@@ -19,6 +19,7 @@ add_library(
              src/main/cpp/source/opencv_jni_util.cpp
              src/main/cpp/source/smoothing.cpp
              src/main/cpp/source/basefunction.cpp
+             src/main/cpp/source/eroding_and_dilating.cpp
               )
 include_directories(
              src/main/cpp/header

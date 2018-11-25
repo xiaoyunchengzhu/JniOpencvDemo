@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">JniOpencvDemo</string>
+    <string name="base_function">图像基础</string>
+    <string name="img_proc">图像处理</string>
+
+    <string name="sharpen">锐化</string>
+    <string name="plus">求和</string>
+    <string name="lightness">亮度和对比度</string>
+      <string name="brightness">亮度</string>
+      <string name="contrast">对比度</string>
+
+    <string name="smoothing">平滑处理</string>
+    <string name="erod_and_dilat">腐蚀和膨胀</string>
+    <string name="morphologyEx">更多形态变换</string>
+      <string name="operate">操作</string>
+      <string name="element">元素</string>
+      <string name="kernalsize"></string>
 </resources>

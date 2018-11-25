@@ -3,7 +3,7 @@
 
 
 JNIEXPORT jbyteArray JNICALL
-Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_middleFilter(JNIEnv *env, jobject instance,
+Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_ImgProcSmoothing_middleFilter(JNIEnv *env, jobject instance,
                                                                       jbyteArray input_,
                                                                       jint width, jint height,
                                                                          jint alpha) {
@@ -26,7 +26,7 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_middleFilter(JNIEnv 
     return output;
 }
 JNIEXPORT jbyteArray JNICALL
-Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_blurFilter(JNIEnv *env, jobject instance,
+Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_ImgProcSmoothing_blurFilter(JNIEnv *env, jobject instance,
                                                                     jbyteArray input_, jint width,
                                                                     jint height,
                                                                        jint alpha) {
@@ -49,7 +49,7 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_blurFilter(JNIEnv *e
 
 }
 JNIEXPORT jbyteArray JNICALL
-Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_gaussianFilter(JNIEnv *env,
+Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_ImgProcSmoothing_gaussianFilter(JNIEnv *env,
                                                                         jobject instance,
                                                                         jbyteArray input_,
                                                                         jint width, jint height,
@@ -74,7 +74,7 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_gaussianFilter(JNIEn
 
 }
 JNIEXPORT jbyteArray JNICALL
-Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Smoothing_bilateralFilter(JNIEnv *env,
+Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_ImgProcSmoothing_bilateralFilter(JNIEnv *env,
                                                                          jobject instance,
                                                                          jbyteArray input_,
                                                                          jint width, jint height,

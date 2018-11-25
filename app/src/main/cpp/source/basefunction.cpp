@@ -119,3 +119,4 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Basefunction_init(JNIEnv *env,
 
 //    env->ReleaseStringUTFChars(path_, path);
 }
+

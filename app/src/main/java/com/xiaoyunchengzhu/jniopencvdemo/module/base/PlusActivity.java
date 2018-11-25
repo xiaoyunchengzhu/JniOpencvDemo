@@ -1,4 +1,4 @@
-package com.xiaoyunchengzhu.jniopencvdemo.module;
+package com.xiaoyunchengzhu.jniopencvdemo.module.base;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

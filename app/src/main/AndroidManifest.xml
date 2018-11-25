@@ -20,10 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".module.SharpenActivity" />
-        <activity android:name=".module.PlusActivity" />
-        <activity android:name=".module.LightnessActivity" />
-        <activity android:name=".module.SmoothingActivity"></activity>
+        <activity android:name=".module.base.SharpenActivity" />
+        <activity android:name=".module.base.PlusActivity" />
+        <activity android:name=".module.base.LightnessActivity" />
+        <activity android:name=".module.imgproc.SmoothingActivity" />
+        <activity android:name=".module.imgproc.ErodingAndDilatingActivity" />
+        <activity android:name=".ImgBaseActivity" />
+        <activity android:name=".ImgProcActivity" />
+        <activity android:name=".module.imgproc.MorphologyExActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.xiaoyunchengzhu.jniopencvdemo.module;
+package com.xiaoyunchengzhu.jniopencvdemo.module.imgproc;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,8 +9,7 @@ import android.widget.SeekBar;
 
 import com.xiaoyunchengzhu.jniopencvdemo.R;
 import com.xiaoyunchengzhu.jniopencvdemo.imgutil.ImgConvert;
-import com.xiaoyunchengzhu.jniopencvdemo.opencvutil.Basefunction;
-import com.xiaoyunchengzhu.jniopencvdemo.opencvutil.Smoothing;
+import com.xiaoyunchengzhu.jniopencvdemo.opencvutil.ImgProcSmoothing;
 
 /**
  * 滤波 ，平滑处理,仅对左侧脸部局部区域滤波，如果想改区域，则可直接进入源码修改选择区域，或者为native 方法增加区域参数。
@@ -93,7 +92,7 @@ public class SmoothingActivity extends AppCompatActivity implements SeekBar.OnSe
             @Override
             public void run() {
 
-                byte[] output = Smoothing.middleFilter(input,width,height,alpha1);
+                byte[] output = ImgProcSmoothing.middleFilter(input,width,height,alpha1);
                 out1 = ImgConvert.getBitmapByBytes(output, width, height);
                 runOnUiThread(new Runnable() {
                     @Override
@@ -109,7 +108,7 @@ public class SmoothingActivity extends AppCompatActivity implements SeekBar.OnSe
             @Override
             public void run() {
 
-                byte[] output = Smoothing.blurFilter(input,width,height,alpha2);
+                byte[] output = ImgProcSmoothing.blurFilter(input,width,height,alpha2);
                 out2 = ImgConvert.getBitmapByBytes(output, width, height);
                 runOnUiThread(new Runnable() {
                     @Override
@@ -125,7 +124,7 @@ public class SmoothingActivity extends AppCompatActivity implements SeekBar.OnSe
             @Override
             public void run() {
 
-                byte[] output = Smoothing.gaussianFilter(input,width,height,alpha3);
+                byte[] output = ImgProcSmoothing.gaussianFilter(input,width,height,alpha3);
                 out3 = ImgConvert.getBitmapByBytes(output, width, height);
                 runOnUiThread(new Runnable() {
                     @Override

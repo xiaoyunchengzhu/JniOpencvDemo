@@ -11,7 +11,7 @@
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="对比度和亮度"
+        android:text="@string/morphologyEx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <ImageView
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:text="@string/contrast"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <SeekBar
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:text="@string/brightness"
+            android:text="亮    度:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <SeekBar

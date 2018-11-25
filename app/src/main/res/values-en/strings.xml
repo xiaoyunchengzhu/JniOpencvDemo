@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">JniOpencvDemo</string>
+    <string name="base_function">Base core</string>
+    <string name="img_proc">Image process</string>
+
+    <string name="sharpen">sharpen</string>
+    <string name="plus">img plus</string>
+    <string name="lightness"> brightness and contrast</string>
+    <string name="brightness">brightness</string>
+    <string name="contrast">contrast</string>
+
+    <string name="smoothing">smoothing</string>
+    <string name="erod_and_dilat">Eroding and Dilating</string>
+    <string name="morphologyEx">MorphologyEx</string>
+    <string name="operate">operate</string>
+    <string name="element">element</string>
+    <string name="kernalsize">kernalsize</string>
+</resources>

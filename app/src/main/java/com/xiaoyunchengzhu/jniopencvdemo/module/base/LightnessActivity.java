@@ -1,4 +1,4 @@
-package com.xiaoyunchengzhu.jniopencvdemo.module;
+package com.xiaoyunchengzhu.jniopencvdemo.module.base;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,7 +19,7 @@ public class LightnessActivity extends AppCompatActivity {
     double lightness=0,duibi=0;
     int width = 0;
     int height = 0;
-    byte[] source = null;
+    byte[] input = null;
     Bitmap out;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class LightnessActivity extends AppCompatActivity {
         Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.mipmap.img1);
         width = bitmap1.getWidth();
         height = bitmap1.getHeight();
-        source = ImgConvert.getBytesByBitmap(bitmap1);
+        input = ImgConvert.getBytesByBitmap(bitmap1);
 
         seekDuibi.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -41,7 +41,7 @@ public class LightnessActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        byte[] output = Basefunction.changeLighteness(source, width, height, duibi,lightness);
+                        byte[] output = Basefunction.changeLighteness(input, width, height, duibi,lightness);
                         out = ImgConvert.getBitmapByBytes(output, width, height);
                         runOnUiThread(new Runnable() {
                             @Override
@@ -71,7 +71,7 @@ public class LightnessActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        byte[] output = Basefunction.changeLighteness(source, width, height, duibi,lightness);
+                        byte[] output = Basefunction.changeLighteness(input, width, height, duibi,lightness);
                         out = ImgConvert.getBitmapByBytes(output, width, height);
                         runOnUiThread(new Runnable() {
                             @Override

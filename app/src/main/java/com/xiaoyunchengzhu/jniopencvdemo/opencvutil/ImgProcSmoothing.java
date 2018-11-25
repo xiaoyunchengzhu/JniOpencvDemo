@@ -3,7 +3,7 @@ package com.xiaoyunchengzhu.jniopencvdemo.opencvutil;
 /**
  * 滤波，平滑处理
  */
-public class Smoothing {
+public class ImgProcSmoothing {
 
 
     /**
