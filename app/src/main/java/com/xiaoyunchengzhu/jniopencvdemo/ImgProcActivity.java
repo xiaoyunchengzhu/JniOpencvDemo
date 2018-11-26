@@ -9,6 +9,7 @@ import com.xiaoyunchengzhu.jniopencvdemo.module.base.LightnessActivity;
 import com.xiaoyunchengzhu.jniopencvdemo.module.base.PlusActivity;
 import com.xiaoyunchengzhu.jniopencvdemo.module.base.SharpenActivity;
 import com.xiaoyunchengzhu.jniopencvdemo.module.imgproc.ErodingAndDilatingActivity;
+import com.xiaoyunchengzhu.jniopencvdemo.module.imgproc.MorphologyExActivity;
 import com.xiaoyunchengzhu.jniopencvdemo.module.imgproc.SmoothingActivity;
 
 public class ImgProcActivity extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class ImgProcActivity extends AppCompatActivity {
                 cls= ErodingAndDilatingActivity.class;
                 break;
             case R.id.btn_3:
-
+                cls= MorphologyExActivity.class;
                 break;
         }
         if (cls!=null){

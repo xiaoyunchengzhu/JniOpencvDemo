@@ -16,7 +16,11 @@ android jni call opencv
 ![Image text](https://github.com/xiaoyunchengzhu/JniOpencvDemo/blob/master/screenshot/Screenshot_2018-11-25-10-22-31-00.png)
 ### 高斯滤波
 ![Image text](https://github.com/xiaoyunchengzhu/JniOpencvDemo/blob/master/screenshot/Screenshot_2018-11-25-10-22-49-49.png)
-## 腐蚀和膨胀
+## 三.腐蚀和膨胀
+### 腐蚀
 ![Image text](https://github.com/xiaoyunchengzhu/JniOpencvDemo/blob/master/screenshot/Screenshot_2018-11-25-11-13-11-92.png)
+### 膨胀
 ![Image text](https://github.com/xiaoyunchengzhu/JniOpencvDemo/blob/master/screenshot/Screenshot_2018-11-25-11-13-28-87.png)
+## 四.更多形态变换
+![Image text](https://github.com/xiaoyunchengzhu/JniOpencvDemo/blob/master/screenshot/Screenshot_2018-11-26-16-16-05-54.png)
 # 稍后更新...

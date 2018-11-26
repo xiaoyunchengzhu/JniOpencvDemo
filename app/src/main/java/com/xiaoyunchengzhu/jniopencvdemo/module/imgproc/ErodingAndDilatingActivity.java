@@ -30,8 +30,6 @@ public class ErodingAndDilatingActivity extends AppCompatActivity implements See
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eroding_and_dilating);
         initview();
-        seekBar1.setOnSeekBarChangeListener(this);
-        seekBar2.setOnSeekBarChangeListener(this);
         Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.mipmap.img1);
         width = bitmap1.getWidth();
         height = bitmap1.getHeight();

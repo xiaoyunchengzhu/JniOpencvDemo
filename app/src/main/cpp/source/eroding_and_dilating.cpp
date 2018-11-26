@@ -3,6 +3,7 @@
 //
 
 #include "eroding_and_dilating.h"
+#include "opencv_jni_util.h"
 int erosion_elem = 1;
 int erosion_size = 0;
 int dilation_elem = 1;
@@ -42,12 +43,8 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_ImgProcErodingAndDilating_erod
     erode( src, erosion_dst, element );
 
 
-    int len=width*height*nChannels;
-    jbyteArray output=env->NewByteArray(len);
-    env->SetByteArrayRegion(output,0,len,(signed char *)erosion_dst.data);
-
+    jbyteArray output=convertMat2byteArray(env,erosion_dst);
     ~src;
-    ~erosion_dst;
     ~element;
     env->ReleaseByteArrayElements(input_, (signed char *)input, 0);
     return output;
@@ -81,13 +78,9 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_ImgProcErodingAndDilating_dila
     dilate( src, dilation_dst, element );
 
     // TODO
-
-    int len=width*height*nChannels;
-    jbyteArray output=env->NewByteArray(len);
-    env->SetByteArrayRegion(output,0,len,(signed char *)dilation_dst.data);
+    jbyteArray output=convertMat2byteArray(env,dilation_dst);
 
     ~src;
-    ~dilation_dst;
     ~element;
     env->ReleaseByteArrayElements(input_, (signed char *)input, 0);
     return output;

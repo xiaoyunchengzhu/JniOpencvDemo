@@ -5,7 +5,6 @@
 
 #include "basefunction.h"
 #include "opencv_jni_util.h"
-const char *path;
 JNIEXPORT jbyteArray JNICALL
 Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Basefunction_sharpen(JNIEnv *env, jclass type,
                                                                        jbyteArray input_,
@@ -38,12 +37,10 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Basefunction_sharpen(JNIEnv *e
     Result.col(0).setTo(cv::Scalar(0));
     Result.col(Result.cols-1).setTo(cv::Scalar(0));
 
-    int len=width*height*nChannels;
-    jbyteArray output=env->NewByteArray(len);
-    env->SetByteArrayRegion(output,0,len,(signed char *)Result.data);
+
+    jbyteArray output=convertMat2byteArray(env,Result);
 
     ~myImage;
-    ~Result;
     env->ReleaseByteArrayElements(input_,(signed char *)input,0);
     return output;
 }
@@ -73,13 +70,11 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Basefunction_add(JNIEnv *env, 
     beta = ( 1.0 - alpha );
     cv::addWeighted( src1, alpha, src2, beta, 0.0, dst);
 
-    int len=width*height*nChannels;
-    jbyteArray output=env->NewByteArray(len);
-    env->SetByteArrayRegion(output,0,len,(signed char *)dst.data);
+    jbyteArray output=convertMat2byteArray(env,dst);
+
 
     ~src1;
     ~src2;
-    ~dst;
     env->ReleaseByteArrayElements(img1_, (signed char *)img1, 0);
     env->ReleaseByteArrayElements(img2_, (signed char *)img2, 0);
     return output;
@@ -98,15 +93,13 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Basefunction_changeLighteness(
     cv::Mat image = cv::Mat(height,width,CV_8UC4,input);
     const int nChannels = image.channels();
     cv::Mat new_image = cv::Mat::zeros( image.size(), image.type() );
-
-
     image.convertTo(new_image, -1, alpha, beta);
-    int len=width*height*nChannels;
-    jbyteArray output=env->NewByteArray(len);
-    env->SetByteArrayRegion(output,0,len,(signed char *)new_image.data);
+
+
+
+    jbyteArray output=convertMat2byteArray(env,new_image);
 
     ~image;
-    ~new_image;
     env->ReleaseByteArrayElements(input_, (signed char *)input, 0);
     return output;
 }

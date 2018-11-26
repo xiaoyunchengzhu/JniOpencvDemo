@@ -10,8 +10,9 @@
 #include "opencv2/core/core.hpp"
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-
+#include "string.h"
 #endif //JNIOPENCVDEMO_BASEFUNCTION_H
+const char *path;
 extern "C" {
 JNIEXPORT jbyteArray JNICALL
 Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Basefunction_sharpen(JNIEnv *env, jclass type,

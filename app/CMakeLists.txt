@@ -20,6 +20,7 @@ add_library(
              src/main/cpp/source/smoothing.cpp
              src/main/cpp/source/basefunction.cpp
              src/main/cpp/source/eroding_and_dilating.cpp
+             src/main/cpp/source/morphologyex.cpp
               )
 include_directories(
              src/main/cpp/header

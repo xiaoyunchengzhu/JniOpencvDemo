@@ -33,3 +33,12 @@ cv::Mat convertBitmp2Mat(JNIEnv *env,jobject obj,jobject bitmap) {
     AndroidBitmap_unlockPixels(env, bitmap);
     return bgr;
 }
+jbyteArray convertMat2byteArray(JNIEnv *env,cv::Mat mat){
+    int len=mat.cols*mat.rows*mat.channels();
+    jbyteArray output=env->NewByteArray(len);
+    jbyte *result= reinterpret_cast<jbyte *>(mat.data);
+    env->SetByteArrayRegion(output, 0, len,result);
+    ~mat;
+    return output;
+
+}

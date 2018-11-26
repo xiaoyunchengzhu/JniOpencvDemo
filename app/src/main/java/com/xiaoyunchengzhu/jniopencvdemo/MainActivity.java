@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Basefunction.init(Environment.getExternalStorageDirectory()+"");
+        Basefunction.init(Environment.getExternalStorageDirectory()+"/");
     }
 
     public void click(View view){

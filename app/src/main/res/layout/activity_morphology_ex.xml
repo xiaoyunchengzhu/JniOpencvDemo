@@ -26,15 +26,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:text=""
+            android:text="@string/operate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <SeekBar
-            android:id="@+id/seek_duibi"
+            android:id="@+id/seek_1"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:progress="1"
-            android:max="100"/>
+            android:progress="0"
+            android:max="4"/>
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="20dp"
@@ -43,22 +43,39 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:text="亮    度:"
+            android:text="@string/element"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <SeekBar
-            android:id="@+id/seek_lightness"
+            android:id="@+id/seek_2"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:progress="1"
-            android:max="100"/>
+            android:progress="0"
+            android:max="2"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:text="@string/kernalsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <SeekBar
+            android:id="@+id/seek_3"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:progress="0"
+            android:max="21"/>
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/img2"
+        android:id="@+id/img1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@mipmap/img1"
+        android:background="@color/black"
         />
 
 </LinearLayout>

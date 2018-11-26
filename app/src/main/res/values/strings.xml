@@ -14,5 +14,5 @@
     <string name="morphologyEx">更多形态变换</string>
       <string name="operate">操作</string>
       <string name="element">元素</string>
-      <string name="kernalsize"></string>
+      <string name="kernalsize">尺寸</string>
 </resources>
