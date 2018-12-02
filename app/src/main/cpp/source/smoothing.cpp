@@ -1,5 +1,5 @@
 
-#include "smoothing.h"
+#include "../header/smoothing.h"
 
 
 JNIEXPORT jbyteArray JNICALL

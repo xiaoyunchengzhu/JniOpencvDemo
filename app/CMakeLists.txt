@@ -10,47 +10,45 @@ cmake_minimum_required(VERSION 3.4.1)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
-set(path_to_opencv /home/zhangshiyu/Downloads/OpenCV-android-sdk)
+message("CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
+set(libs_DIR ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI})
+
+set(libs_DIR_header_opencv src/main/cpp/opencv/include)
+
+
+file(GLOB native_srcs "src/main/cpp/source/*.cpp")
+file(GLOB native_header "src/main/cpp/header/*.h")
+
+add_library(
+        base_opencv
+        SHARED
+        ${native_srcs}
+        ${native_header}
+)
 
 
 add_library(
-             base_opencv
-             SHARED
-             src/main/cpp/source/opencv_jni_util.cpp
-             src/main/cpp/source/smoothing.cpp
-             src/main/cpp/source/basefunction.cpp
-             src/main/cpp/source/eroding_and_dilating.cpp
-             src/main/cpp/source/morphologyex.cpp
-              )
-include_directories(
-             src/main/cpp/header
-             )
-include_directories(
-             ${path_to_opencv}/sdk/native/jni/include
-             )
-
-add_library(
-            lib_opencv
-            SHARED
-            IMPORTED
-           )
+        lib_opencv
+        SHARED
+        IMPORTED
+)
 
 set_target_properties(lib_opencv
-                     PROPERTIES
-                     IMPORTED_LOCATION
-                     ${path_to_opencv}/sdk/native/libs/${ANDROID_ABI}/libopencv_java3.so
-                     #src/main/jniLibs/${ANDROID_ABI}/libopencv_java3.so
-                     )
+        PROPERTIES
+        IMPORTED_LOCATION
+        ${libs_DIR}/libopencv_java3.so
+        )
+
+target_include_directories(base_opencv PUBLIC
+        ${libs_DIR_header_opencv}
+        )
 find_library(
-              log-lib
-              log )
-#find_library(
-#              bitmap-lib
-#              bitmap )
+        log-lib
+        log)
 
 target_link_libraries(
-                       base_opencv
-                       ${log-lib}
-                       jnigraphics
-                       lib_opencv
-                        )
+        base_opencv
+        ${log-lib}
+        jnigraphics
+        lib_opencv
+)

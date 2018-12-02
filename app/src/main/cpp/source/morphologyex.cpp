@@ -2,8 +2,8 @@
 // Created by zhangshiyu on 18-11-25.
 //
 
-#include "morphologyex.h"
-#include "opencv_jni_util.h"
+#include "../header/morphologyex.h"
+#include "../header/opencv_jni_util.h"
 int morph_elem = 0;
 int morph_size = 0;
 int morph_operator = 0;
@@ -37,10 +37,11 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_ImgprocMorphologyEx_morphalogy
 
     /// 运行指定形态学操作
     morphologyEx( dst, dst, operation, elementMat );
-    char img[150];
-    strcpy(img,file);
-    strcat(img,"fuck9.jpg");
-    imwrite(img,dst);
+//    char img[150];
+//    strcpy(img,file);
+//    strcat(img,"fuck9.jpg");
+//    std::string imgfile=img;
+//    imwrite(imgfile,dst);
 
     jbyteArray output=convertMat2byteArray(env,dst);
     ~src;

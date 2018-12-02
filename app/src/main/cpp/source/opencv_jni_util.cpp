@@ -2,7 +2,7 @@
 // Created by zhangshiyu on 18-11-22.
 //
 
-#include "opencv_jni_util.h"
+#include "../header/opencv_jni_util.h"
 cv::Mat convertBitmp2Mat(JNIEnv *env,jobject obj,jobject bitmap) {
     AndroidBitmapInfo infocolor;
     void *pixelscolor;

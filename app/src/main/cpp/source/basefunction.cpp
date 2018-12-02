@@ -3,8 +3,8 @@
 //
 
 
-#include "basefunction.h"
-#include "opencv_jni_util.h"
+#include "../header/basefunction.h"
+#include "../header/opencv_jni_util.h"
 JNIEXPORT jbyteArray JNICALL
 Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Basefunction_sharpen(JNIEnv *env, jclass type,
                                                                        jbyteArray input_,

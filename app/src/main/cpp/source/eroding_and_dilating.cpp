@@ -2,8 +2,8 @@
 // Created by zhangshiyu on 18-11-25.
 //
 
-#include "eroding_and_dilating.h"
-#include "opencv_jni_util.h"
+#include "../header/eroding_and_dilating.h"
+#include "../header/opencv_jni_util.h"
 int erosion_elem = 1;
 int erosion_size = 0;
 int dilation_elem = 1;
