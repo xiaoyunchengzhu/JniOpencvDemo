@@ -64,8 +64,8 @@ Java_com_xiaoyunchengzhu_jniopencvdemo_opencvutil_Basefunction_add(JNIEnv *env, 
     cv::Mat dst;
     const int nChannels = src1.channels();
 
-    if( !src1.data ) { printf("Error loading src1 \n"); return nullptr; }
-    if( !src2.data ) { printf("Error loading src2 \n"); return nullptr; }
+    if( !src1.data ) { printf("Error loading src1 \n"); return NULL; }
+    if( !src2.data ) { printf("Error loading src2 \n"); return NULL; }
 
     beta = ( 1.0 - alpha );
     cv::addWeighted( src1, alpha, src2, beta, 0.0, dst);
